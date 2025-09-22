@@ -4,7 +4,23 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat"],
+        "montserrat-light": ["MontserratLight"],
+        "montserrat-medium": ["MontserratMedium"],
+        "montserrat-semibold": ["MontserratSemiBold"],
+        "montserrat-bold": ["MontserratBold"],
+      },
+
+      colors: {
+        primary: {
+          100: "#3BA935",
+          200: "#10B981",
+        },
+        muted: "#686873",
+      },
+    },
   },
   future: {
     hoverOnlyWhenSupported: true,
