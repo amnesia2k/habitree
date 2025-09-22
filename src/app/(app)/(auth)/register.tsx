@@ -159,8 +159,13 @@ export default function RegisterScreen() {
                       dob ? "text-black" : "text-muted"
                     }`}
                   >
-                    {dob ? dob.toDateString() : "Select your date of birth"}
+                    {dob
+                      ? `${String(dob.getDate()).padStart(2, "0")}/${String(
+                          dob.getMonth() + 1
+                        ).padStart(2, "0")}/${dob.getFullYear()}`
+                      : "DD/MM/YYYY"}
                   </Text>
+
                   {dob && dobFocused && (
                     <Pressable
                       onPress={() => setDob(null)}
@@ -170,6 +175,7 @@ export default function RegisterScreen() {
                       <Ionicons name="close-circle" size={20} color="#999" />
                     </Pressable>
                   )}
+
                   <Ionicons
                     name="calendar-outline"
                     size={20}
@@ -182,7 +188,7 @@ export default function RegisterScreen() {
                   <DateTimePicker
                     value={dob || new Date()}
                     mode="date"
-                    display={Platform.OS === "ios" ? "spinner" : "default"}
+                    display={Platform.OS === "ios" ? "spinner" : "spinner"}
                     maximumDate={new Date()}
                     onChange={(event, selectedDate) => {
                       if (Platform.OS === "android") setShowPicker(false);
