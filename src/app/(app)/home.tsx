@@ -17,31 +17,31 @@ const { width } = Dimensions.get("window");
 const data = [
   {
     id: 1,
-    image: require("../../../assets/images/auth_one.png"),
+    image: require("../../assets/images/auth_one.png"),
     title: "Create Good Habits",
     subtitle:
       "Change your life by slowly adding new habits and sticking to them.",
   },
   {
     id: 2,
-    image: require("../../../assets/images/auth_two.png"),
+    image: require("../../assets/images/auth_two.png"),
     title: "Track Your Progress",
     subtitle:
       "Everyday you become one step closer to your goal. Don't give up!",
   },
   {
     id: 3,
-    image: require("../../../assets/images/auth_three.png"),
+    image: require("../../assets/images/auth_three.png"),
     title: "Stay Together and Strong",
     subtitle:
       "Find friends to discuss common topics. Complete habits together.",
   },
 ];
 
-export default function AuthIndex() {
+export default function HomeScreen() {
   return (
     <ImageBackground
-      source={require("../../../assets/images/auth_bg.png")}
+      source={require("../../assets/images/auth_bg.png")}
       resizeMode="cover"
       className="flex-1"
     >
@@ -91,7 +91,7 @@ export default function AuthIndex() {
         <View className="px-6 mb-8">
           {/* Continue with Email */}
           <TouchableOpacity
-            onPress={() => router.push("/(app)/(auth)/login")}
+            onPress={() => router.push("/login")}
             className="bg-white rounded-[40px] py-4 px-5 flex-row items-center justify-center mb-4 h-[52px]"
           >
             <Ionicons name="mail-outline" size={20} color="black" />

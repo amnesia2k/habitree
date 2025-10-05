@@ -24,18 +24,17 @@ export default function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <KeyboardAvoidingView className="flex-1 bg-white" behavior="padding">
+    <SafeAreaView className="flex-1">
       <StatusBar barStyle="dark-content" />
-      <TouchableWithoutFeedback
-        onPress={() => {
-          Keyboard.dismiss();
-          setEmailFocused(false);
-          setPasswordFocused(false);
-        }}
-      >
-        <SafeAreaView className="flex-1">
-          <BackButton title="Continue with E-mail" />
-
+      <BackButton title="Continue with E-mail" />
+      <KeyboardAvoidingView className="flex-1 bg-white" behavior="padding">
+        <TouchableWithoutFeedback
+          onPress={() => {
+            Keyboard.dismiss();
+            setEmailFocused(false);
+            setPasswordFocused(false);
+          }}
+        >
           {/* Use flex-1 + justify-between so inputs stay top, actions stay bottom */}
           <View className="flex-1 justify-between">
             {/* Inputs Section */}
@@ -130,8 +129,8 @@ export default function LoginScreen() {
               </TouchableOpacity>
             </View>
           </View>
-        </SafeAreaView>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
